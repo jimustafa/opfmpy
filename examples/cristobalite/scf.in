@@ -1,0 +1,43 @@
+&control
+   calculation = 'scf'
+   restart_mode = 'from_scratch'
+   wf_collect = .false.
+   outdir = './_scratch'
+   pseudo_dir = './'
+   tstress = .true.
+   tprnfor = .true.
+/
+&system
+   ibrav = 0
+   celldm(1) = 13.483
+   nat = 6
+   ntyp = 2
+   ecutwfc = 40.0
+   ecutrho = 200.0
+/
+&electrons
+   electron_maxstep = 100
+   conv_thr = 1.0d-10
+   mixing_mode = 'plain'
+   mixing_beta = 0.7
+   mixing_ndim = 8
+   diagonalization = 'david'
+   diago_david_ndim = 4
+   diago_full_acc = .true.
+/
+CELL_PARAMETERS alat
+       0.000000000   0.500000000   0.500000000
+       0.500000000   0.000000000   0.500000000
+       0.500000000   0.500000000   0.000000000
+ATOMIC_SPECIES
+  Si  28.086  Si.UPF
+  O   15.999   O.UPF
+ATOMIC_POSITIONS crystal
+  Si  1/8 1/8 1/8
+  Si  7/8 7/8 7/8
+  O    0   0   0
+  O    0   0  1/2
+  O    0  1/2  0
+  O   1/2  0   0
+K_POINTS automatic
+  5 5 5  0 0 0
